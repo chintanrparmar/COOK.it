@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu"
+    android:layout_width="175dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="?colorPrimary">
+
+
+    <TextView
+        android:id="@+id/homeTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorPrimaryDark"
+        android:drawableTop="@drawable/ic_carbon_home"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Home"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prefTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?colorPrimaryDark"
+        android:drawableTop="@drawable/ic_carbon_settings"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Preferences"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeTv" />
+
+    <TextView
+        android:id="@+id/logoutTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="?colorPrimaryDark"
+        android:drawableTop="@drawable/ic_carbon_logout"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Home"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/prefTv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<it.cook.utils.DrawerContent xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motionLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/content_drawer_motion">
+
+    <include layout="@layout/content_main" />
+</it.cook.utils.DrawerContent>
