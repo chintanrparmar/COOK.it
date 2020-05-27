@@ -19,15 +19,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        val button = findViewById<Button>(R.id.button)
+//        val button = findViewById<Button>(R.id.button)
         container = findViewById(R.id.motionLayout1)
         val drawerLayout = findViewById<DrawerLayout>(R.id.motionLayout)
 
 
+/*
         button.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
             changeState(container)
         }
+*/
     }
 
     fun changeState(v: View?) {

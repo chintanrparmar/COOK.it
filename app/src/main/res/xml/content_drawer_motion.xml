@@ -13,7 +13,7 @@
             android:id="@id/content"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            motion:layout_constraintLeft_toRightOf="@+id/button"
+            motion:layout_constraintLeft_toRightOf="@+id/nav_host_fragment"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintWidth_default="percent"
             motion:layout_constraintWidth_percent="1" />
