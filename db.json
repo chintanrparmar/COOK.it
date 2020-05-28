@@ -4,7 +4,31 @@
       "id": 1,
       "title": "Gajar Halwa",
       "cookingTime": "15",
-      "cover": "https://drive.google.com/open?id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
+      "cover": "https://drive.google.com/uc?export=download&id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
+    },
+    {
+      "id": 2,
+      "title": "Gajar Halwa",
+      "cookingTime": "15",
+      "cover": "https://drive.google.com/uc?export=download&id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
+    },
+    {
+      "id": 3,
+      "title": "Vegetable Sandwich",
+      "cookingTime": "10",
+      "cover": "https://drive.google.com/uc?export=download&id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
+    },
+    {
+      "id": 4,
+      "title": "Rooh Afza",
+      "cookingTime": "5",
+      "cover": "https://drive.google.com/uc?export=download&id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
+    },
+    {
+      "id": 5,
+      "title": "Hakka Noodles",
+      "cookingTime": "18",
+      "cover": "https://drive.google.com/uc?export=download&id=1n1HJWj9hntERLqhd4fsr-Yt23PfCbr8Q"
     }
   ]
 }
