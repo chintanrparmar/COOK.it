@@ -10,8 +10,13 @@
         <item name="colorSecondaryVariant">@color/teel_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Headline24dp">
+        <item name="android:textSize">@dimen/abc_text_size_headline_material</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">?colorOnSecondary</item>
+    </style>
 </resources>

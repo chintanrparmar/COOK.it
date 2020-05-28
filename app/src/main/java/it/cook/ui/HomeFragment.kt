@@ -1,27 +1,79 @@
 package it.cook.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import it.cook.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import it.cook.databinding.FragmentHomeBinding
+import it.cook.model.Recipe
+import it.cook.model.RecipeData
+import it.cook.model.State
+import it.cook.network.ApiHelper
+import it.cook.network.RetrofitBuilder
+import it.cook.ui.adapter.RecipeListAdapter
+import it.cook.utils.ViewModelFactory
+import it.cook.viewmodel.MainViewModel
 
 class HomeFragment : Fragment() {
 
+    private var _binding: FragmentHomeBinding? = null
+    private lateinit var viewModel: MainViewModel
+
+    private val binding get() = _binding!!
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        print("")
+        setupViewModel()
+        setupObservers()
     }
 
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(ApiHelper(RetrofitBuilder.apiService))
+        ).get(MainViewModel::class.java)
+        viewModel.getRecipes()
+    }
+
+    private fun setupObservers() {
+        viewModel.recipeLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let { state ->
+                when (state) {
+                    is State.Loading -> {
+
+                    }
+                    is State.Success -> {
+                        state.data.recipes?.let { it1 -> setAdapter(it1) }
+                    }
+                    is State.Error -> {
+
+                    }
+                }
+            }
+        })
+    }
+
+    private fun setAdapter(recipes: List<Recipe>) {
+        binding.breakFastRv.adapter = RecipeListAdapter(recipes)
+    }
 
 }
