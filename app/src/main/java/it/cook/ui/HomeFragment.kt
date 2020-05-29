@@ -16,11 +16,13 @@ import it.cook.network.RetrofitBuilder
 import it.cook.ui.adapter.RecipeListAdapter
 import it.cook.utils.ViewModelFactory
 import it.cook.viewmodel.MainViewModel
+import it.cook.viewmodel.NavDrawerState
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private lateinit var viewModel: MainViewModel
+    private lateinit var navDrawerState: NavDrawerState
 
     private val binding get() = _binding!!
 
@@ -44,9 +46,18 @@ class HomeFragment : Fragment() {
 
         setupViewModel()
         setupObservers()
+        setupOnClick()
+    }
+
+    private fun setupOnClick() {
+        activity?.run {
+            navDrawerState = ViewModelProvider(this).get(NavDrawerState::class.java)
+        } ?: throw Throwable("invalid activity")
+        binding.menuIv.setOnClickListener { navDrawerState.updateNavDrawer(true) }
     }
 
     private fun setupViewModel() {
+
         viewModel = ViewModelProvider(
             this,
             ViewModelFactory(ApiHelper(RetrofitBuilder.apiService))
@@ -74,6 +85,8 @@ class HomeFragment : Fragment() {
 
     private fun setAdapter(recipes: List<Recipe>) {
         binding.breakFastRv.adapter = RecipeListAdapter(recipes)
+        binding.lunchRv.adapter = RecipeListAdapter(recipes)
+        binding.dinnerRv.adapter = RecipeListAdapter(recipes)
     }
 
 }

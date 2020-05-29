@@ -13,30 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/foodCoverIv"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/foodCard"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_margin="2.5dp"
+            app:cardCornerRadius="8dp"
             app:layout_constraintDimensionRatio="H,16:9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/foodCoverIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_menu_24" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/foodTitleTv"
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:maxLines="2"
             android:textColor="?colorOnSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/foodCoverIv"
+            app:layout_constraintTop_toBottomOf="@id/foodCard"
             tools:text="Vegetable Sandwich" />
 
         <TextView
@@ -44,7 +52,7 @@
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:fontFamily="@font/poppins_regular"
             android:gravity="center"
             android:maxLines="2"
