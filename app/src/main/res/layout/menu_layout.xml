@@ -42,16 +42,16 @@
         app:layout_constraintTop_toBottomOf="@id/homeTv" />
 
     <TextView
-        android:id="@+id/logoutTv"
+        android:id="@+id/aboutTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:background="?colorPrimaryDark"
-        android:drawableTop="@drawable/ic_carbon_logout"
+        android:drawableTop="@drawable/ic_information"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:padding="15dp"
-        android:text="Home"
+        android:text="About"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="parent"

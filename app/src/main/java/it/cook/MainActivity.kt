@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import it.cook.viewmodel.NavDrawerState
+import kotlinx.android.synthetic.main.menu_layout.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         prefTv.setOnClickListener { goToPrefPage() }
         homeTv.setOnClickListener { goToHomePage() }
+        aboutTv.setOnClickListener { goToAboutPage() }
 
         drawerLayout.setScrimColor(resources.getColor(android.R.color.transparent))
 
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun goToAboutPage() {
+        findNavController(this, R.id.nav_host_fragment).navigate(R.id.aboutFragment)
+        navDrawerState.updateNavDrawer(false)
+    }
     private fun goToPrefPage() {
         findNavController(this, R.id.nav_host_fragment).navigate(R.id.preferencesFragment)
         navDrawerState.updateNavDrawer(false)

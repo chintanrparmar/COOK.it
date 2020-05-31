@@ -19,4 +19,9 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textColor">?colorOnSecondary</item>
     </style>
+    <style name="Headline34dp">
+        <item name="android:textSize">@dimen/abc_text_size_display_1_material</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
 </resources>
