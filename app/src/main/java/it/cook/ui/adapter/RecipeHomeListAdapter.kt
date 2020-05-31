@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import it.cook.databinding.RecipeListItemBinding
+import it.cook.databinding.RecipeItemBinding
 import it.cook.model.Recipe
 
-class RecipeListAdapter(private val list: List<Recipe>, val adapterOnClick: (Int) -> Unit) :
-    RecyclerView.Adapter<RecipeListAdapter.RecipeListView>() {
+class RecipeHomeListAdapter(private val list: List<Recipe>, val adapterOnClick: (Int) -> Unit) :
+    RecyclerView.Adapter<RecipeHomeListAdapter.RecipeListView>() {
 
-    inner class RecipeListView(private val binding: RecipeListItemBinding) :
+    inner class RecipeListView(private val binding: RecipeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipeModel: Recipe) {
             binding.foodTitleTv.text = recipeModel.title
@@ -22,7 +22,7 @@ class RecipeListAdapter(private val list: List<Recipe>, val adapterOnClick: (Int
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeListView {
         return RecipeListView(
-            RecipeListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            RecipeItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 

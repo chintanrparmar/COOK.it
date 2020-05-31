@@ -2,16 +2,21 @@
     <!-- Application theme for dark theme. -->
     <style name="Theme.COOK.it" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorPrimary">@color/orange_100</item>
+        <item name="colorPrimaryDark">@color/orange_200</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teel_200</item>
-        <item name="colorSecondaryVariant">@color/teel_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/orange_100</item>
+        <item name="colorSecondaryVariant">@color/orange_200</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Headline24dp">
+        <item name="android:textSize">@dimen/abc_text_size_headline_material</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">?colorOnSecondary</item>
+    </style>
 </resources>

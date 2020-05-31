@@ -1,14 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.PreferencesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideParent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.056" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideParent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.944" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:navigationIcon="@drawable/ic_baseline_arrow"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@id/doneBt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuide"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.056" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuide"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.944" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/Headline24dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Let us know your timings so we can remind you with a new recipe daily"
+                android:textColor="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="We’ll send you a notification at these times. Tap on the time to change it, or disable the switch to disable notification."
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/textView1" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/breakFastCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:contentPadding="15dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/textView2"
+                app:strokeColor="#e1e1e1"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Switch
+                        android:id="@+id/breakFastSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:id="@+id/breakFastTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Breakfast"
+                        android:textColor="?colorPrimary" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakFastTv"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="08:30 AM"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/lunchCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:contentPadding="15dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/breakFastCard"
+                app:strokeColor="#e1e1e1"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Switch
+                        android:id="@+id/lunchSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:id="@+id/lunchTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Breakfast"
+                        android:textColor="?colorPrimary" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunchTv"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="08:30 AM"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:contentPadding="15dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuide"
+                app:layout_constraintStart_toStartOf="@id/startGuide"
+                app:layout_constraintTop_toBottomOf="@id/lunchCard"
+                app:strokeColor="#e1e1e1"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Switch
+                        android:id="@+id/dinnerSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true" />
+
+                    <TextView
+                        android:id="@+id/dinnerTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Breakfast"
+                        android:textColor="?colorPrimary" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinnerTv"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="08:30 AM"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/doneBt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Done"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endGuideParent"
+        app:layout_constraintStart_toStartOf="@id/startGuideParent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

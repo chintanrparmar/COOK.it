@@ -9,13 +9,26 @@
         android:id="@+id/homeFragment"
         android:name="it.cook.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
         <action
             android:id="@+id/action_homeFragment_to_listFragment"
-            app:destination="@id/listFragment" />
+            app:destination="@id/listFragment">
+            <argument
+                android:name="category"
+                android:defaultValue="empty"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment" />
     </fragment>
     <fragment
         android:id="@+id/preferencesFragment"
@@ -31,9 +44,14 @@
         android:id="@+id/listFragment"
         android:name="it.cook.ui.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment">
+            <argument
+                android:name="recipeId"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
     </fragment>
 </navigation>

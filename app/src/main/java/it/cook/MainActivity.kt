@@ -1,21 +1,19 @@
 package it.cook
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import it.cook.network.ApiHelper
-import it.cook.network.RetrofitBuilder
-import it.cook.utils.ViewModelFactory
-import it.cook.viewmodel.MainViewModel
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import it.cook.viewmodel.NavDrawerState
 
 class MainActivity : AppCompatActivity() {
@@ -27,17 +25,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-//        val button = findViewById<Button>(R.id.button)
         container = findViewById(R.id.motionLayout1)
         val drawerLayout = findViewById<DrawerLayout>(R.id.motionLayout)
+        val prefTv = findViewById<TextView>(R.id.prefTv)
+        val homeTv = findViewById<TextView>(R.id.homeTv)
 
+        prefTv.setOnClickListener { goToPrefPage() }
+        homeTv.setOnClickListener { goToHomePage() }
 
-/*
-        button.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
-            changeState(container)
-        }
-*/
         drawerLayout.setScrimColor(resources.getColor(android.R.color.transparent))
 
         navDrawerState = ViewModelProvider(this@MainActivity).get(NavDrawerState::class.java)
@@ -45,11 +40,24 @@ class MainActivity : AppCompatActivity() {
             if (it) {
                 drawerLayout.openDrawer(GravityCompat.START)
                 changeState(container)
+            } else {
+                drawerLayout.closeDrawer(GravityCompat.START)
             }
         })
+
     }
 
-    fun changeState(v: View?) {
+    private fun goToPrefPage() {
+        findNavController(this, R.id.nav_host_fragment).navigate(R.id.preferencesFragment)
+        navDrawerState.updateNavDrawer(false)
+    }
+
+    private fun goToHomePage() {
+        findNavController(this, R.id.nav_host_fragment).navigate(R.id.homeFragment)
+        navDrawerState.updateNavDrawer(false)
+    }
+
+    private fun changeState(v: View?) {
         val motionLayout = container as? MotionLayout ?: return
 //        if (motionLayout.progress > 0.5f) {
         motionLayout.transitionToEnd()

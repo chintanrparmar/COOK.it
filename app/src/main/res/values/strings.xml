@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">COOK.it</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="preparation_time">Preparation time: %1$s</string>
+    <string name="cooking_time">Cooking time: %1$s</string>
 </resources>
