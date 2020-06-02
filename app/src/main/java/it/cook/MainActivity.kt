@@ -1,5 +1,6 @@
 package it.cook
 
+import android.app.NotificationManager
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -7,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -14,8 +16,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import it.cook.receiver.AlarmHandler
+import it.cook.utils.sendNotification
 import it.cook.viewmodel.NavDrawerState
 import kotlinx.android.synthetic.main.menu_layout.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +51,26 @@ class MainActivity : AppCompatActivity() {
                 drawerLayout.closeDrawer(GravityCompat.START)
             }
         })
+
+        val alarmHandler=AlarmHandler()
+        val nowTime = Calendar.getInstance()
+        val setTime = nowTime.clone() as Calendar
+        setTime[Calendar.HOUR_OF_DAY] = nowTime.get(Calendar.HOUR_OF_DAY)
+        setTime[Calendar.MINUTE] = nowTime.get(Calendar.MINUTE)+2
+        setTime[Calendar.SECOND] = 0
+        setTime[Calendar.MILLISECOND] = 0
+        alarmHandler.setAlarm(this,setTime)
+
+      /*  val notificationManager = ContextCompat.getSystemService(
+            this,
+            NotificationManager::class.java
+        ) as NotificationManager
+
+        notificationManager.sendNotification(
+            "getText(R.string.time_to_cook).toString()",
+            this
+        )
+*/
 
     }
 
