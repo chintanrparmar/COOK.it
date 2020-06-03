@@ -7,14 +7,14 @@
       "id": 1,
       "title": "Moong Dal Dosa",
       "cookingTime": "20 Mins",
-      "cover": "https://drive.google.com/uc?export=download&id=1ik6JVF6NIeyd8Rz50GOfvuWzR_jUiTb6",
+      "cover": "https://github.com/chintanrparmar/COOK.it/raw/master/images/moong_dosa.jpg",
       "category": "breakfast"
     },
     {
       "id": 2,
       "title": "Aloo Paratha",
       "cookingTime": "30 Mins",
-      "cover": "https://drive.google.com/uc?export=download&id=1ik6JVF6NIeyd8Rz50GOfvuWzR_jUiTb6",
+      "cover": "https://github.com/chintanrparmar/COOK.it/raw/master/images/AlooParatha.jpg",
       "prepTime": "20 Mins",
       "ingredients": "for aloo paratha stuffing\\n3 to 4 medium potatoes\\n1 to 2 green chilies, chopped finely\\n¼ to ½ teaspoon kashmiri red chilli powder\\n¼ to ½ teaspoon garam masala powder\\n½ to 1 teaspoon amchur\\n2 to 3 teaspoons finely chopped coriander leaves, optional\\nsalt as required\\noil or ghee, as required for roasting parathas\\n\\nfor paratha dough\\n2 cups whole wheat flour\\n½ teaspoon salt or add as required\\n1 tablespoon oil or ghee\\nwater as required for kneading",
       "stepsGuide": "making stuffing\\nFirst boil the potatoes and peel them.\\nChop and mash the potatoes.\\nThe potatoes should be mashed very well.\\nNow add the chopped green chilies, garam masala powder, red chili powder, dry mango powder and salt.\\nMix the spice powders and green chilies with the mashed potatoes very well.\\n\\nkneading dough\\nIn another bowl, take whole wheat flour (atta).\\nMake a well in the center. Add salt, oil and about half of the water.\\nBring the mixture together and knead into a smooth soft dough.\\nCover and keep the dough aside for 20 to 30 minutes.\\n\\nrolling and stuffing aloo paratha\\nPinch two small balls from the dough. Flatten them and dust with whole wheat flour.\\nWith a rolling pin, roll them into about 4 to 5 inches diameter rounds . Try making both the rounds of the same size.\\nOn one of the rolled dough circle, place the potato stuffing in the center and keep about 1 inch empty space from the sides.\\nGently place the second circle on top.\\nPress and seal the edges with your fingertips.\\nDust some flour on the stuffed paratha and roll into a round of about 7 to 8 inches in diameter or about the size of a normal roti or chapati.\\n\\nmaking aloo ke parathe\\nOn a hot tava (tawa or skillet or griddle) place the rolled paratha.\\nThe Tava shoud be hot and not at a low temp. Cooking parathas at a low flame will harden them. Parathas ideally are crisp as well as soft.\\nWhen the base is partly cooked, flip the paratha.\\nSpread some ghee on the partly cooked part.\\nFlip again and this time this side has to be cooked more than the previous side. You will see brown spots on the paratha.\\nServe hot.",
@@ -28,7 +28,7 @@
       "title": "Khandvi Roll",
       "category": "lunch",
       "cookingTime": "20 Mins",
-      "cover": "https://drive.google.com/uc?export=download&id=1ik6JVF6NIeyd8Rz50GOfvuWzR_jUiTb6"
+      "cover": "https://github.com/chintanrparmar/COOK.it/raw/master/images/Khandvi.jpg"
     },
     {
       "prepTime": "25 Mins",
@@ -38,7 +38,7 @@
       "title": "Pav Bhaji",
       "category": "dinner",
       "cookingTime": "20 Mins",
-      "cover": "https://drive.google.com/uc?export=download&id=1ik6JVF6NIeyd8Rz50GOfvuWzR_jUiTb6"
+      "cover": "https://github.com/chintanrparmar/COOK.it/raw/master/images/Pavbhaji.jpg"
     }
   ]
 }
