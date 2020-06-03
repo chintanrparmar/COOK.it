@@ -10,4 +10,7 @@
     <string name="about">About</string>
     <string name="time_to_cook">Time to Cook!</string>
     <string name="cook_notification_channel_id">cook_it</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="dinner">Dinner</string>
+    <string name="lunch">Lunch</string>
 </resources>

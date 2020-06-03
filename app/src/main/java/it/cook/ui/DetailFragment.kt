@@ -1,5 +1,6 @@
 package it.cook.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,6 +52,21 @@ class DetailFragment : Fragment() {
 
     private fun setupOnClick() {
         binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+        binding.shareRecipeBt.setOnClickListener {
+            val i = Intent()
+            i.action = Intent.ACTION_SEND
+            i.putExtra(
+                Intent.EXTRA_TEXT,
+                "For ${binding.titleTv.text} and more amazing recipes, Download COOK.it now!"
+            )
+            i.type = "text/plain"
+            startActivity(
+                Intent.createChooser(
+                    i,
+                    "Share ${getString(R.string.app_name)}"
+                )
+            )
+        }
     }
 
     private fun setupViewModel() {
@@ -89,10 +105,10 @@ class DetailFragment : Fragment() {
 
     fun setData(recipe: Recipe) {
         binding.titleTv.text = recipe.title
-        binding.cookTimeTv.text = getString(R.string.cooking_time,recipe.cookingTime)
-        binding.prepTimeTv.text = getString(R.string.preparation_time,recipe.prepTime)
-        binding.ingredientsTv.text = recipe.ingredients?.replace("\\n","\n\n")
-        binding.stepsTv.text = recipe.stepsGuide?.replace("\\n","\n\n")
+        binding.cookTimeTv.text = getString(R.string.cooking_time, recipe.cookingTime)
+        binding.prepTimeTv.text = getString(R.string.preparation_time, recipe.prepTime)
+        binding.ingredientsTv.text = recipe.ingredients?.replace("\\n", "\n\n")
+        binding.stepsTv.text = recipe.stepsGuide?.replace("\\n", "\n\n")
         binding.foodCoverIv.load(recipe.cover)
 
     }

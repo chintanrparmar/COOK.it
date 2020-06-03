@@ -52,14 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val alarmHandler=AlarmHandler()
-        val nowTime = Calendar.getInstance()
-        val setTime = nowTime.clone() as Calendar
-        setTime[Calendar.HOUR_OF_DAY] = nowTime.get(Calendar.HOUR_OF_DAY)
-        setTime[Calendar.MINUTE] = nowTime.get(Calendar.MINUTE)+2
-        setTime[Calendar.SECOND] = 0
-        setTime[Calendar.MILLISECOND] = 0
-        alarmHandler.setAlarm(this,setTime)
+
 
       /*  val notificationManager = ContextCompat.getSystemService(
             this,

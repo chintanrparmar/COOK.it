@@ -165,7 +165,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="Breakfast"
+                        android:text="Lunch"
                         android:textColor="?colorPrimary" />
 
                     <TextView
@@ -174,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/lunchTv"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="08:30 AM"
+                        android:text="12:30 AM"
                         android:textColor="@color/black" />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -208,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="Breakfast"
+                        android:text="Dinner"
                         android:textColor="?colorPrimary" />
 
                     <TextView
@@ -217,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/dinnerTv"
                         android:fontFamily="@font/poppins_bold"
-                        android:text="08:30 AM"
+                        android:text="09:30 PM"
                         android:textColor="@color/black" />
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
