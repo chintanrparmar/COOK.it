@@ -3,7 +3,7 @@ package it.cook.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import it.cook.databinding.RecipeListItemBinding
 import it.cook.model.Recipe
 

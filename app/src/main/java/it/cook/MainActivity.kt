@@ -19,7 +19,6 @@ import androidx.navigation.fragment.findNavController
 import it.cook.receiver.AlarmHandler
 import it.cook.utils.sendNotification
 import it.cook.viewmodel.NavDrawerState
-import kotlinx.android.synthetic.main.menu_layout.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.motionLayout)
         val prefTv = findViewById<TextView>(R.id.prefTv)
         val homeTv = findViewById<TextView>(R.id.homeTv)
+        val aboutTv = findViewById<TextView>(R.id.aboutTv)
 
         prefTv.setOnClickListener { goToPrefPage() }
         homeTv.setOnClickListener { goToHomePage() }

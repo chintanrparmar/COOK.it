@@ -10,8 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.navigateUp
-import coil.api.load
+import coil.load
 import it.cook.R
 import it.cook.databinding.FragmentDetailBinding
 import it.cook.model.Recipe
